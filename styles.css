@@ -137,6 +137,11 @@ body {
   text-align: left;
 }
 
+.hero-memory-cluster {
+  position: relative;
+  min-height: 520px;
+}
+
 .hero-photo-frame {
   position: relative;
   margin: 0;
@@ -144,7 +149,9 @@ body {
   border-radius: 34px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 235, 240, 0.7));
   box-shadow: 0 24px 40px rgba(184, 108, 138, 0.2);
-  transform: rotate(2deg);
+  transform: rotate(-3deg);
+  width: min(100%, 300px);
+  z-index: 2;
 }
 
 .hero-photo-frame::after {
@@ -166,6 +173,52 @@ body {
   border-radius: 24px;
 }
 
+.hero-video-frame {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  overflow: hidden;
+  width: min(100%, 280px);
+  padding: 14px 14px 16px;
+  border-radius: 34px;
+  background: linear-gradient(145deg, rgba(255, 250, 245, 0.95), rgba(255, 230, 214, 0.82));
+  box-shadow: 0 24px 40px rgba(184, 108, 138, 0.2);
+  transform: rotate(4deg);
+}
+
+.hero-video-frame::after {
+  content: "";
+  position: absolute;
+  inset: 12px auto auto -10px;
+  width: 66px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(146, 197, 155, 0.38);
+  transform: rotate(-16deg);
+}
+
+.hero-video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.memory-pin {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 1;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--accent-deep);
+  font-family: "Fredoka", sans-serif;
+  font-size: 0.9rem;
+}
+
 .screen-action {
   display: flex;
   margin-top: 18px;
@@ -177,6 +230,12 @@ body {
 
 .screen-action-center {
   justify-content: center;
+}
+
+.screen-action-split {
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
 }
 
 .eyebrow {
@@ -239,7 +298,7 @@ h1 {
 
 .memory-video-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 0 auto 20px;
 }
@@ -460,6 +519,33 @@ h1 {
   transform: translateY(0);
 }
 
+.ghost-button {
+  margin-top: 12px;
+  border: 1px solid rgba(255, 90, 132, 0.28);
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-deep);
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(184, 108, 138, 0.14);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.ghost-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(184, 108, 138, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ghost-button:active {
+  transform: translateY(0);
+}
+
 .birthday-note {
   margin-top: 22px;
   padding: 24px 18px 6px;
@@ -594,6 +680,20 @@ h1 {
     margin: 0 auto;
   }
 
+  .hero-memory-cluster {
+    min-height: 0;
+    display: grid;
+    gap: 18px;
+  }
+
+  .hero-video-frame {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+
   .photo-wall {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -621,11 +721,14 @@ h1 {
   }
 
   .screen-action-right,
-  .screen-action-center {
+  .screen-action-center,
+  .screen-action-split {
     justify-content: stretch;
+    flex-direction: column;
   }
 
-  .surprise-button {
+  .surprise-button,
+  .ghost-button {
     width: 100%;
   }
 }

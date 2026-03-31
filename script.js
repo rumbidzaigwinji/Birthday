@@ -58,6 +58,8 @@ screenLinks.forEach((button) => {
   });
 });
 
-celebrateButton.addEventListener("click", () => {
-  celebrate();
-});
+if (celebrateButton) {
+  celebrateButton.addEventListener("click", () => {
+    celebrate();
+  });
+}
