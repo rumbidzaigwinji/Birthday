@@ -20,7 +20,44 @@
         <span class="blob blob-three"></span>
       </div>
 
-      <main class="card storybook" data-current-screen="opening">
+      <section class="login-shell" id="loginGate">
+        <div class="login-card">
+          <div class="login-badge" aria-hidden="true">+</div>
+          <p class="eyebrow">Private Birthday Archive</p>
+          <h1 class="login-title">A tiny lock before the magic</h1>
+          <p class="login-copy">
+            This page is just for you. Enter your details to unlock the little
+            birthday world waiting inside.
+          </p>
+
+          <form class="login-form" id="loginForm">
+            <label class="login-field">
+              <span>Username</span>
+              <input id="usernameInput" name="username" type="text" autocomplete="username" />
+            </label>
+
+            <label class="login-field">
+              <span>Password</span>
+              <input
+                id="passwordInput"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+              />
+            </label>
+
+            <p class="login-error" id="loginError" hidden>
+              That didn’t match. Try the birthday credentials again.
+            </p>
+
+            <button class="surprise-button login-button" type="submit">
+              Unlock surprise
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <main class="card storybook" data-current-screen="opening" id="storybook" hidden>
         <section class="screen opening-screen is-active" id="opening">
           <div class="hero-grid">
             <div class="hero-copy">
@@ -362,6 +399,47 @@
 
           <div class="screen-action screen-action-split">
             <button class="ghost-button screen-link" data-target="gallery" type="button">
+              Back
+            </button>
+            <button class="surprise-button screen-link" data-target="gift" type="button">
+              One more thing...
+            </button>
+          </div>
+        </section>
+
+        <section class="screen gift-screen" id="gift" aria-labelledby="giftTitle">
+          <p class="eyebrow">The gift</p>
+          <h2 id="giftTitle">And before you go... there’s this too</h2>
+          <p class="intro">
+            A little something for your next chapter, wrapped up here just in
+            case the email takes its sweet time.
+          </p>
+
+          <div class="gift-layout">
+            <figure class="gift-image-frame">
+              <img src="media/gift-card.jpeg" alt="Nike gift card for Ben" />
+            </figure>
+
+            <section class="gift-note">
+              <p>
+                I struggled to get something from a store I fully trust, and I
+                do not have the advantage of knowing anyone close to you there,
+                so this felt like the sweetest way to still get a gift to you.
+              </p>
+              <p>
+                I’m sure they’ll send it to your email too, but I wanted to put
+                it here as part of the surprise. And maybe one more gift may
+                still find its way to you... who knows?
+              </p>
+              <p>
+                Let this gift card be one of your first stops in Germany. Happy
+                birthday again, truly. You are 1 of 1.
+              </p>
+            </section>
+          </div>
+
+          <div class="screen-action screen-action-split">
+            <button class="ghost-button screen-link" data-target="message" type="button">
               Back
             </button>
             <button class="surprise-button" id="celebrateButton" type="button">

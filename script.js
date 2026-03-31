@@ -1,7 +1,32 @@
+const ACCESS_CREDENTIALS = {
+  username: "ben",
+  password: "bestiesfr",
+};
+
+const ACCESS_STORAGE_KEY = "birthday-surprise-unlocked";
+const loginGate = document.getElementById("loginGate");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+const usernameInput = document.getElementById("usernameInput");
+const passwordInput = document.getElementById("passwordInput");
 const screenLinks = document.querySelectorAll(".screen-link");
 const screens = document.querySelectorAll(".screen");
 const celebrateButton = document.getElementById("celebrateButton");
-const storybook = document.querySelector(".storybook");
+const storybook = document.getElementById("storybook");
+
+function unlockSite() {
+  if (loginGate) {
+    loginGate.hidden = true;
+  }
+
+  if (storybook) {
+    storybook.hidden = false;
+  }
+}
+
+function isAuthenticated() {
+  return window.sessionStorage.getItem(ACCESS_STORAGE_KEY) === "true";
+}
 
 function showScreen(targetId) {
   screens.forEach((screen) => {
@@ -42,6 +67,39 @@ function celebrate() {
   }
 }
 
+if (isAuthenticated()) {
+  unlockSite();
+}
+
+if (loginForm) {
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const username = usernameInput?.value.trim().toLowerCase() ?? "";
+    const password = passwordInput?.value.trim() ?? "";
+    const isMatch =
+      username === ACCESS_CREDENTIALS.username &&
+      password === ACCESS_CREDENTIALS.password;
+
+    if (!isMatch) {
+      if (loginError) {
+        loginError.hidden = false;
+      }
+      return;
+    }
+
+    window.sessionStorage.setItem(ACCESS_STORAGE_KEY, "true");
+
+    if (loginError) {
+      loginError.hidden = true;
+    }
+
+    unlockSite();
+    showScreen("opening");
+    celebrate();
+  });
+}
+
 screenLinks.forEach((button) => {
   button.addEventListener("click", () => {
     const targetId = button.dataset.target;
@@ -52,7 +110,7 @@ screenLinks.forEach((button) => {
 
     showScreen(targetId);
 
-    if (targetId === "gallery" || targetId === "message") {
+    if (targetId === "gallery" || targetId === "message" || targetId === "gift") {
       celebrate();
     }
   });
