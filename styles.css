@@ -172,8 +172,8 @@ body {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 24px;
-  opacity: 0.74;
-  filter: saturate(0.95) contrast(0.98);
+  opacity: 1;
+  filter: none;
 }
 
 .hero-video-frame {
