@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-blobs" aria-hidden="true">
+        <span class="blob blob-one"></span>
+        <span class="blob blob-two"></span>
+        <span class="blob blob-three"></span>
+      </div>
+
+      <main class="card storybook" data-current-screen="opening">
+        <section class="screen opening-screen is-active" id="opening">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">A little birthday surprise</p>
+              <h1>Guess whose birthday it is today?</h1>
+              <p class="intro">
+                There is only one correct answer, and this page was made with a
+                whole lot of love for him.
+              </p>
+            </div>
+
+            <figure class="hero-photo-frame">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.23.jpeg"
+                alt="Ben and Rumbi smiling together"
+              />
+            </figure>
+          </div>
+
+          <div class="screen-action screen-action-right">
+            <button class="surprise-button screen-link" data-target="gallery" type="button">
+              Wanna continue... click here
+            </button>
+          </div>
+        </section>
+
+        <section class="screen gallery-screen" id="gallery" aria-labelledby="memoryTitle">
+          <p class="memory-tag">Our little memory lane</p>
+          <h2 id="memoryTitle">Some of the unseen best moments of Ben and Rumbi</h2>
+          <p class="memory-copy">
+            The quiet favorites, the soft chaos, the laughs, and all the sweet
+            little pieces that deserve to be remembered.
+          </p>
+
+          <div class="memory-video-grid">
+            <article class="memory-video-card">
+              <video controls preload="metadata" playsinline>
+                <source
+                  src="media/WhatsApp Video 2026-03-31 at 16.07.49.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </article>
+
+            <article class="memory-video-card">
+              <video controls preload="metadata" playsinline>
+                <source
+                  src="media/WhatsApp Video 2026-03-31 at 16.08.14.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </article>
+          </div>
+
+          <div class="photo-wall" aria-label="Photo gallery of memories">
+            <figure class="memory-polaroid tilt-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.23.jpeg"
+                alt="Ben and Rumbi memory 1"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.23 (1).jpeg"
+                alt="Ben and Rumbi memory 2"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.23 (2).jpeg"
+                alt="Ben and Rumbi memory 3"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.24.jpeg"
+                alt="Ben and Rumbi memory 4"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.24 (1).jpeg"
+                alt="Ben and Rumbi memory 5"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.24 (2).jpeg"
+                alt="Ben and Rumbi memory 6"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.25.jpeg"
+                alt="Ben and Rumbi memory 7"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.25 (1).jpeg"
+                alt="Ben and Rumbi memory 8"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.25 (2).jpeg"
+                alt="Ben and Rumbi memory 9"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.25 (3).jpeg"
+                alt="Ben and Rumbi memory 10"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-left">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.25 (4).jpeg"
+                alt="Ben and Rumbi memory 11"
+              />
+            </figure>
+            <figure class="memory-polaroid tilt-soft-right">
+              <img
+                src="media/WhatsApp Image 2026-03-31 at 16.15.26.jpeg"
+                alt="Ben and Rumbi memory 12"
+              />
+            </figure>
+          </div>
+
+          <div class="screen-action screen-action-center">
+            <button class="surprise-button screen-link" data-target="message" type="button">
+              Now are you ready for the birthday message?
+            </button>
+          </div>
+        </section>
+
+        <section class="screen message-screen" id="message" aria-labelledby="messageTitle">
+          <p class="eyebrow">The birthday message</p>
+          <h2 id="messageTitle">Happy Birthday, Ben</h2>
+          <p class="intro">
+            Today is all about laughter, soft moments, and feeling deeply
+            loved. This little corner of the internet was made just for you.
+          </p>
+
+          <section class="cake-scene" aria-label="Birthday cake illustration">
+            <div class="cake">
+              <div class="candle">
+                <span class="flame"></span>
+              </div>
+              <div class="icing"></div>
+              <div class="sprinkles sprinkles-left"></div>
+              <div class="sprinkles sprinkles-right"></div>
+            </div>
+          </section>
+
+          <section class="birthday-note" id="birthdayNote">
+            <p>
+              I hope this year brings you gentle mornings, deep peace, brave
+              new memories, and the kind of joy that stays with you long after
+              the day is over.
+            </p>
+            <p>
+              You deserve love that feels safe, happiness that feels honest,
+              and a year full of moments that remind you just how special you
+              are.
+            </p>
+            <p class="signature">With love, always. Happy birthday.</p>
+          </section>
+
+          <div class="screen-action screen-action-center">
+            <button class="surprise-button" id="celebrateButton" type="button">
+              Celebrate Ben
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
