@@ -139,7 +139,7 @@ body {
 
 .hero-memory-cluster {
   position: relative;
-  min-height: 560px;
+  min-height: 540px;
 }
 
 .hero-photo-frame {
@@ -179,14 +179,14 @@ body {
 .hero-video-frame {
   position: absolute;
   right: 0;
-  top: 6px;
+  bottom: 8px;
   overflow: hidden;
-  width: min(100%, 230px);
+  width: min(100%, 220px);
   padding: 14px 14px 16px;
   border-radius: 34px;
   background: linear-gradient(145deg, rgba(255, 250, 245, 0.95), rgba(255, 230, 214, 0.82));
   box-shadow: 0 24px 40px rgba(184, 108, 138, 0.2);
-  transform: rotate(6deg);
+  transform: rotate(3deg);
   z-index: 3;
 }
 
@@ -693,7 +693,7 @@ h1 {
   .hero-video-frame {
     position: relative;
     right: auto;
-    top: auto;
+    bottom: auto;
     width: min(100%, 320px);
     margin: 0 auto;
   }
